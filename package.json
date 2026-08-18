@@ -1,0 +1,33 @@
+{
+  "name": "easy-queue-collection",
+  "version": "1.0.0",
+  "description": "Internal system to manage and track collection requests.",
+  "keywords": [
+    "POC",
+    "Nodejs",
+    "strategy",
+    "factory",
+    "observer"
+  ],
+  "homepage": "https://github.com/efms25/easy-queue-collection#readme",
+  "bugs": {
+    "url": "https://github.com/efms25/easy-queue-collection/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efms25/easy-queue-collection.git"
+  },
+  "license": "MIT",
+  "author": "Eric Santana",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "fastify": "^5.12.1"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
