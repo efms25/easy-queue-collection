@@ -8,6 +8,7 @@ export type PickupRegister = {
     clientType: ClientTypes;
     number_of_packages: number; 
     status: PickupStatus;
+    priority: number;
     createdAt: Date;
 }
 

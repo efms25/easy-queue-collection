@@ -1,6 +1,6 @@
-import { PickupFilter } from "../interfaces/pickup-filter.interface";
-import { PickupRepository } from "../interfaces/Pickup-repository.interface";
-import { PickupRegister, UpdatePickup } from "../types/pickup.type";
+import { PickupFilter } from "../pickup-filter.interface";
+import { PickupRepository } from "./Pickup-repository.interface";
+import { PickupRegister, UpdatePickup } from "../pickup.type";
 
 export class InMemoryPickupRepository implements PickupRepository {
   pickups = new Map<number, PickupRegister>();
@@ -48,10 +48,10 @@ export class InMemoryPickupRepository implements PickupRepository {
         client: pickup.client ?? originalPickup!.client,
         region: pickup.region ?? originalPickup!.region,
         clientType: pickup.clientType ?? originalPickup!.clientType,
-        number_of_packages:
-          pickup.number_of_packages ?? originalPickup!.number_of_packages,
+        number_of_packages: pickup.number_of_packages ?? originalPickup!.number_of_packages,
         status: pickup.status ?? originalPickup!.status,
         createdAt: originalPickup!.createdAt,
+        priority: pickup.priority ??originalPickup!.priority
       };
 
       this.pickups.set(pickup.id, newPickup);

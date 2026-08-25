@@ -1,5 +1,5 @@
-import { PickupRegister } from "../types/pickup.type";
-import { PickupFilter } from "./pickup-filter.interface";
+import { PickupRegister } from "../pickup.type";
+import { PickupFilter } from "../pickup-filter.interface";
 
 export interface PickupRepository {
   addPickup(pickup: PickupRegister): Promise<void>;
