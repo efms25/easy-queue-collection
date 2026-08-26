@@ -1,10 +1,14 @@
 import { PickupFactoryPayload } from "../pickup-factory.payload";
+import { PACKAGE_WEIGHT_MULTIPLIER } from "./prioritization-weights";
 import { PriorityStrategy } from "./priority-strategy.interface";
+import { calculateTimePriorityWeights } from "./priority-weight-calculation.helper";
 
 export class PackageAmountPriorityStrategy implements PriorityStrategy {
-    calculatePriority(pickupRegister: PickupFactoryPayload): number {
-        let priorityValue = 0;
-        // TODO: Implement calc
-        return priorityValue
-    }
+  calculatePriority(pickupRegister: PickupFactoryPayload): number {
+    return (
+      Math.floor(
+        pickupRegister.number_of_packages * PACKAGE_WEIGHT_MULTIPLIER,
+      ) + calculateTimePriorityWeights(pickupRegister.createdAt)
+    );
+  }
 }
