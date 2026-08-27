@@ -7,7 +7,7 @@ export abstract class Observable<TObserver extends Observer<TData>, TData> {
     subscribe(observer:TObserver): void {
         this.subscribers.push(observer);
     }
-    protected notify(data: TData) {
+    notify(data: TData) {
         this.subscribers.forEach(s => s.update(data))
     }
 }

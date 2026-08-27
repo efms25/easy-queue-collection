@@ -1,15 +1,18 @@
 import { PickupFilter } from "../pickup-filter.interface";
 import { PickupRepository } from "./Pickup-repository.interface";
 import { PickupRegister, UpdatePickup } from "../pickup.type";
+import { PickupFactoryPayload } from "../pickup-factory.payload";
 
 export class InMemoryPickupRepository implements PickupRepository {
   pickups = new Map<number, PickupRegister>();
+  idCount:number = 1;
 
-  async addPickup(pickup: PickupRegister): Promise<void> {
-    if (this.pickups.has(pickup.id))
-      throw new Error("Value with the same id already added.");
+  async addPickup(pickup: PickupFactoryPayload): Promise<PickupRegister> {
+    const newPickup = {...pickup, id: this.idCount};
+    this.pickups.set(this.idCount, newPickup);
+    this.idCount++;
 
-    this.pickups.set(pickup.id, pickup);
+    return newPickup;
   }
 
   async getAllPickups(): Promise<PickupRegister[]> {
