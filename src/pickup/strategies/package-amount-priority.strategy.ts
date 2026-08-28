@@ -1,6 +1,6 @@
-import { PickupFactoryPayload } from "../pickup-factory.payload";
+import type { PickupFactoryPayload } from "../pickup-factory.payload";
 import { PACKAGE_WEIGHT_MULTIPLIER } from "./prioritization-weights";
-import { PriorityStrategy } from "./priority-strategy.interface";
+import type { PriorityStrategy } from "./priority-strategy.interface";
 import { calculateTimePriorityWeights } from "./priority-weight-calculation.helper";
 
 export class PackageAmountPriorityStrategy implements PriorityStrategy {

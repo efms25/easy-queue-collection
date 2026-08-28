@@ -1,6 +1,7 @@
 {
   "name": "easy-queue-collection",
   "version": "1.0.0",
+  "rootDir": "src",
   "description": "Internal system to manage and track collection requests.",
   "keywords": [
     "POC",
@@ -20,15 +21,24 @@
   "license": "MIT",
   "author": "Eric Santana",
   "type": "module",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc -p tsconfig.json",
+    "start": "node index.js"
   },
   "dependencies": {
     "fastify": "^5.12.1"
   },
   "devDependencies": {
-    "@types/node": "^26.3.0",
-    "jest": "^30.4.2"
-  }
+    "@types/node": "^26.4.0",
+    "jest": "^30.4.2",
+    "typescript": "^7.0.2"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ]
 }

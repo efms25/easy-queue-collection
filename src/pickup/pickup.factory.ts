@@ -1,5 +1,5 @@
-import { CreatePickupDto } from "./dtos/create-pickup.dto";
-import { PickupFactoryPayload } from "./pickup-factory.payload";
+import type { CreatePickupDto } from "./dtos/create-pickup.dto";
+import type { PickupFactoryPayload } from "./pickup-factory.payload";
 import { PickupStatus } from "./pickup-status.enum";
 
 export class PickupFactory {

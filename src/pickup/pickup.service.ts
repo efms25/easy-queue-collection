@@ -1,12 +1,12 @@
 import { CounterObserver } from "./counter.observer";
-import { CreatePickupDto } from "./dtos/create-pickup.dto";
+import type { CreatePickupDto } from "./dtos/create-pickup.dto";
 import { LoggerObserver } from "./logger.observer";
-import { PickupFilter } from "./pickup-filter.interface";
+import type { PickupFilter } from "./pickup-filter.interface";
 import { PickupStatus } from "./pickup-status.enum";
 import { PickupFactory } from "./pickup.factory";
 import { PickupObservable } from "./pickup.observable";
-import { PickupRegister, UpdatePickup } from "./pickup.type";
-import { PickupRepository } from "./repositories/Pickup-repository.interface";
+import type { PickupRegister } from "./pickup.type";
+import type { PickupRepository } from "./repositories/Pickup-repository.interface";
 import { PriorityStrategyFactory } from "./strategies/priority-strategy-factory";
 import { PriorityStrategyContext } from "./strategies/priority-strategy.context";
 

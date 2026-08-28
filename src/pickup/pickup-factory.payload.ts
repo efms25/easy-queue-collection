@@ -1,3 +1,3 @@
-import { PickupRegister } from "./pickup.type";
+import type { PickupRegister } from "./pickup.type";
 
 export type PickupFactoryPayload = Omit<PickupRegister, 'id'>;

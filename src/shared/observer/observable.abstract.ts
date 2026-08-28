@@ -1,4 +1,4 @@
-import { Observer } from "./observer.interface";
+import type { Observer } from "./observer.interface";
 
 export abstract class Observable<TObserver extends Observer<TData>, TData> {
 

@@ -1,7 +1,7 @@
 import { PrioritizationTypes } from "./prioritization-types.enum";
 import { PackageAmountPriorityStrategy } from "./package-amount-priority.strategy";
 import { ClientTypePriorityStrategy } from "./client-type-priority.strategy";
-import { PriorityStrategy } from "./priority-strategy.interface";
+import type { PriorityStrategy } from "./priority-strategy.interface";
 
 export class PriorityStrategyFactory {
   constructor(

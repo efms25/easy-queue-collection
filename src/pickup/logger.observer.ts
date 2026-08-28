@@ -1,6 +1,6 @@
 import { log } from "../shared/Log/log.helper";
-import { Observer } from "../shared/observer/observer.interface";
-import { PickupRegister } from "./pickup.type";
+import type { Observer } from "../shared/observer/observer.interface";
+import type { PickupRegister } from "./pickup.type";
 
 export class LoggerObserver implements Observer<PickupRegister> {
     private context = ''

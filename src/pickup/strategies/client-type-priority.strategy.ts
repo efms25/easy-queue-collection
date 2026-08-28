@@ -1,6 +1,6 @@
-import { PickupFactoryPayload } from "../pickup-factory.payload";
+import type { PickupFactoryPayload } from "../pickup-factory.payload";
 import { CLIENT_PRIORITIZATION_WEIGHTS } from "./prioritization-weights";
-import { PriorityStrategy } from "./priority-strategy.interface";
+import type { PriorityStrategy } from "./priority-strategy.interface";
 import { calculateTimePriorityWeights } from "./priority-weight-calculation.helper";
 
 export class ClientTypePriorityStrategy implements PriorityStrategy {

@@ -1,5 +1,5 @@
-import { PickupFactoryPayload } from "../pickup-factory.payload";
-import { PriorityStrategy } from "./priority-strategy.interface";
+import type { PickupFactoryPayload } from "../pickup-factory.payload";
+import type { PriorityStrategy } from "./priority-strategy.interface";
 
 export class PriorityStrategyContext {
   strategy?: PriorityStrategy;
