@@ -1,7 +1,7 @@
-import { PickupFilter } from "../pickup-filter.interface";
-import { PickupRepository } from "./Pickup-repository.interface";
-import { PickupRegister, UpdatePickup } from "../pickup.type";
-import { PickupFactoryPayload } from "../pickup-factory.payload";
+import type { PickupFilter } from "../pickup-filter.interface";
+import type { PickupRepository } from "./Pickup-repository.interface";
+import type { PickupRegister, UpdatePickup } from "../pickup.type";
+import type { PickupFactoryPayload } from "../pickup-factory.payload";
 
 export class InMemoryPickupRepository implements PickupRepository {
   pickups = new Map<number, PickupRegister>();
