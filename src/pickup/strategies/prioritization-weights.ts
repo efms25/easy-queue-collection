@@ -1,4 +1,4 @@
-import { ClientTypes } from "../client-types.enum";
+import { ClientTypes } from "../client-types.enum.ts";
 
 export const CLIENT_PRIORITIZATION_WEIGHTS = {
     [ClientTypes.DEFAULT]: 0,

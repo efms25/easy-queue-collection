@@ -1,6 +1,6 @@
-import type { PickupRegister } from "../pickup.type";
-import type { PickupFilter } from "../pickup-filter.interface";
-import type { PickupFactoryPayload } from "../pickup-factory.payload";
+import { PickupFactoryPayload } from "../pickup-factory.payload.ts";
+import { PickupFilter } from "../pickup-filter.interface.ts";
+import { PickupRegister } from "../pickup.type.ts";
 
 export interface PickupRepository {
   addPickup(pickup: PickupFactoryPayload): Promise<PickupRegister>;

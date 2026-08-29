@@ -1,5 +1,5 @@
-import { ClientTypes } from "./client-types.enum";
-import { PickupStatus } from "./pickup-status.enum";
+import { ClientTypes } from "./client-types.enum.ts";
+import { PickupStatus } from "./pickup-status.enum.ts";
 
 export type PickupRegister = {
     id: number;

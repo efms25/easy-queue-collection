@@ -1,14 +1,14 @@
-import type { PickupFilter } from "../pickup-filter.interface";
-import type { PickupRepository } from "./Pickup-repository.interface";
-import type { PickupRegister, UpdatePickup } from "../pickup.type";
-import type { PickupFactoryPayload } from "../pickup-factory.payload";
+import { PickupFactoryPayload } from "../pickup-factory.payload.ts";
+import { PickupFilter } from "../pickup-filter.interface.ts";
+import { PickupRegister, UpdatePickup } from "../pickup.type.ts";
+import { PickupRepository } from "./Pickup-repository.interface.ts";
 
 export class InMemoryPickupRepository implements PickupRepository {
   pickups = new Map<number, PickupRegister>();
-  idCount:number = 1;
+  idCount: number = 1;
 
   async addPickup(pickup: PickupFactoryPayload): Promise<PickupRegister> {
-    const newPickup = {...pickup, id: this.idCount};
+    const newPickup = { ...pickup, id: this.idCount };
     this.pickups.set(this.idCount, newPickup);
     this.idCount++;
 
@@ -36,9 +36,9 @@ export class InMemoryPickupRepository implements PickupRepository {
       ),
     );
 
-    return filtered
+    return filtered;
   }
-  
+
   async updatePickup(pickup: UpdatePickup): Promise<void> {
     if (this.pickups.has(pickup.id))
       throw new Error("Value with the same id already added.");
@@ -51,10 +51,11 @@ export class InMemoryPickupRepository implements PickupRepository {
         client: pickup.client ?? originalPickup!.client,
         region: pickup.region ?? originalPickup!.region,
         clientType: pickup.clientType ?? originalPickup!.clientType,
-        number_of_packages: pickup.number_of_packages ?? originalPickup!.number_of_packages,
+        number_of_packages:
+          pickup.number_of_packages ?? originalPickup!.number_of_packages,
         status: pickup.status ?? originalPickup!.status,
         createdAt: originalPickup!.createdAt,
-        priority: pickup.priority ??originalPickup!.priority
+        priority: pickup.priority ?? originalPickup!.priority,
       };
 
       this.pickups.set(pickup.id, newPickup);

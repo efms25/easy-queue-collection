@@ -1,9 +1,8 @@
-import type { FastifyReply, FastifyRequest } from "fastify";
-import type { CreatePickupDto } from "./dtos/create-pickup.dto";
-import { PickupService } from "./pickup.service";
-import type { PickupRegister } from "./pickup.type";
-import type { PickupStatus } from "./pickup-status.enum";
-import type { PickupFilter } from "./pickup-filter.interface";
+import { FastifyReply, FastifyRequest } from "fastify";
+import { CreatePickupDto } from "./dtos/create-pickup.dto.ts";
+import { PickupService } from "./pickup.service.ts";
+import { PickupStatus } from "./pickup-status.enum.ts";
+import { PickupFilter } from "./pickup-filter.interface.ts";
 
 export class PickupController {
   constructor(private readonly pickupService: PickupService) {}

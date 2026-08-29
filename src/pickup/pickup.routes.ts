@@ -1,18 +1,18 @@
 import type { FastifyInstance } from "fastify";
-import { PickupService } from "./pickup.service";
-import { InMemoryPickupRepository } from "./repositories/in-memory-pickup.repository";
-import { PickupFactory } from "./pickup.factory";
-import { PickupObservable } from "./pickup.observable";
-import { PriorityStrategyContext } from "./strategies/priority-strategy.context";
-import { PriorityStrategyFactory } from "./strategies/priority-strategy-factory";
-import { PackageAmountPriorityStrategy } from "./strategies/package-amount-priority.strategy";
-import { ClientTypePriorityStrategy } from "./strategies/client-type-priority.strategy";
-import { CounterObserver } from "./counter.observer";
-import { LoggerObserver } from "./logger.observer";
-import { PickupController } from "./pickup.controller";
-import type { CreatePickupDto } from "./dtos/create-pickup.dto";
-import type { PickupStatus } from "./pickup-status.enum";
-import type { PickupFilter } from "./pickup-filter.interface";
+import { InMemoryPickupRepository } from "./repositories/in-memory-pickup.repository.ts";
+import { PickupFactory } from "./pickup.factory.ts";
+import { PickupObservable } from "./pickup.observable.ts";
+import { PriorityStrategyContext } from "./strategies/priority-strategy.context.ts";
+import { PackageAmountPriorityStrategy } from "./strategies/package-amount-priority.strategy.ts";
+import { ClientTypePriorityStrategy } from "./strategies/client-type-priority.strategy.ts";
+import { PriorityStrategyFactory } from "./strategies/priority-strategy-factory.ts";
+import { CounterObserver } from "./counter.observer.ts";
+import { LoggerObserver } from "./logger.observer.ts";
+import { PickupService } from "./pickup.service.ts";
+import { PickupController } from "./pickup.controller.ts";
+import { CreatePickupDto } from "./dtos/create-pickup.dto.ts";
+import { PickupStatus } from "./pickup-status.enum.ts";
+import { PickupFilter } from "./pickup-filter.interface.ts";
 
 export default async function pickupRoutes(fastify: FastifyInstance) {
   // DI

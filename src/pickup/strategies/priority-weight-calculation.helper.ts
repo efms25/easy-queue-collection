@@ -1,4 +1,4 @@
-import { WEIGHT_PER_HOUR_MULTIPLIER } from "./prioritization-weights";
+import { WEIGHT_PER_HOUR_MULTIPLIER } from "./prioritization-weights.ts";
 
 export function calculateTimePriorityWeights(createdAt: Date): number {
   const now = new Date();

@@ -1,6 +1,6 @@
-import { log } from "../shared/Log/log.helper";
-import type { Observer } from "../shared/observer/observer.interface";
-import type { PickupRegister } from "./pickup.type";
+import { log } from "../shared/Log/log.helper.ts";
+import { Observer } from "../shared/observer/observer.interface.ts";
+import { PickupRegister } from "./pickup.type.ts";
 
 export class LoggerObserver implements Observer<PickupRegister> {
     private context = ''

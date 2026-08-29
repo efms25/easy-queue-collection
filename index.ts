@@ -1,5 +1,5 @@
 import Fastify from "fastify";
-import pickupRoutes from "./src/pickup/pickup.routes";
+import pickupRoutes from "./src/pickup/pickup.routes.ts";
 
 const server = Fastify({
   logger: true,

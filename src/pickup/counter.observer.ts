@@ -1,5 +1,5 @@
-import type { Observer } from "../shared/observer/observer.interface";
-import type { PickupRegister } from "./pickup.type";
+import { Observer } from "../shared/observer/observer.interface.ts";
+import { PickupRegister } from "./pickup.type.ts";
 
 export class CounterObserver implements Observer<PickupRegister> {
   private counterName: string = "pickup";

@@ -1,14 +1,14 @@
-import { CounterObserver } from "./counter.observer";
-import type { CreatePickupDto } from "./dtos/create-pickup.dto";
-import { LoggerObserver } from "./logger.observer";
-import type { PickupFilter } from "./pickup-filter.interface";
-import { PickupStatus } from "./pickup-status.enum";
-import { PickupFactory } from "./pickup.factory";
-import { PickupObservable } from "./pickup.observable";
-import type { PickupRegister } from "./pickup.type";
-import type { PickupRepository } from "./repositories/Pickup-repository.interface";
-import { PriorityStrategyFactory } from "./strategies/priority-strategy-factory";
-import { PriorityStrategyContext } from "./strategies/priority-strategy.context";
+import { CounterObserver } from "./counter.observer.ts";
+import type { CreatePickupDto } from "./dtos/create-pickup.dto.ts";
+import { LoggerObserver } from "./logger.observer.ts";
+import type { PickupFilter } from "./pickup-filter.interface.ts";
+import { PickupStatus } from "./pickup-status.enum.ts";
+import { PickupFactory } from "./pickup.factory.ts";
+import { PickupObservable } from "./pickup.observable.ts";
+import type { PickupRegister } from "./pickup.type.ts";
+import type { PickupRepository } from "./repositories/Pickup-repository.interface.ts";
+import { PriorityStrategyFactory } from "./strategies/priority-strategy-factory.ts";
+import { PriorityStrategyContext } from "./strategies/priority-strategy.context.ts";
 
 export class PickupService {
   constructor(
