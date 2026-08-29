@@ -25,7 +25,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc -p tsconfig.json",
-    "start": "node index.js"
+    "start": "node index.ts"
   },
   "dependencies": {
     "fastify": "^5.12.1"
