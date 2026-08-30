@@ -47,19 +47,31 @@ export default async function pickupRoutes(fastify: FastifyInstance) {
 
   fastify.post<{ Body: CreatePickupDto }>(
     `${endpoint}`,
-    pickupController.createPickup,
+    async (request, reply) =>
+      await pickupController.createPickup(request, reply),
   );
   fastify.patch<{ Body: { status: PickupStatus }; Params: { id: number } }>(
     `${endpoint}/:id`,
-    pickupController.updatePickup,
+    async (request, reply) =>
+      await pickupController.updatePickup(request, reply),
   );
   fastify.delete<{ Params: { id: number } }>(
     `${endpoint}`,
-    pickupController.removePickup,
+    async (request, reply) =>
+      await pickupController.removePickup(request, reply),
   );
-  fastify.get(`${endpoint}`, pickupController.findAllPickups);
+  fastify.get(
+    `${endpoint}`,
+    async (request, reply) =>
+      await pickupController.findAllPickups(request, reply),
+  );
   fastify.get<{ Querystring: PickupFilter }>(
     `${endpoint}/filter`,
-    pickupController.filterPickups,
+    async (request, reply) => pickupController.filterPickups(request, reply),
+  );
+  fastify.get(
+    `${endpoint}/resume`,
+    async (request, reply) =>
+      await pickupController.operationalResume(request, reply),
   );
 }
