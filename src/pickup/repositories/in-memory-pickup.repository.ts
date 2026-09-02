@@ -4,8 +4,12 @@ import { PickupRegister, UpdatePickup } from "../pickup.type.ts";
 import { PickupRepository } from "./Pickup-repository.interface.ts";
 
 export class InMemoryPickupRepository implements PickupRepository {
-  pickups = new Map<number, PickupRegister>();
+  private pickups = new Map<number, PickupRegister>();
   idCount: number = 1;
+
+  constructor(pickupStore?: Map<number, PickupRegister>) {
+    if (pickupStore) this.pickups = pickupStore;
+  }
 
   async addPickup(pickup: PickupFactoryPayload): Promise<PickupRegister> {
     const newPickup = { ...pickup, id: this.idCount };
