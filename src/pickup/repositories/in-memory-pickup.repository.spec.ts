@@ -73,4 +73,25 @@ describe("InMemoryPickupRepository", () => {
 
     expect(pickups).toEqual(pickupRegisterMock);
   });
+
+  it("should return filtered data by status, client and region", async () => {
+    const pickupRegisterMock = {
+      ...mockPickupPayload,
+      id: 2,
+    };
+
+    mockStore.set(pickupRegisterMock.id, pickupRegisterMock);
+
+    const filterParams = {
+      status: pickupRegisterMock.status,
+      clientType: pickupRegisterMock.clientType,
+      region: pickupRegisterMock.region,
+    };
+
+
+    const results =
+      await inMemoryPickupRepositoryMock.filterPickups(filterParams);
+
+    expect(results).toEqual([pickupRegisterMock]);
+  });
 });
